@@ -4,12 +4,14 @@
 #include "Student.h"
 class Tgroup_of_students{
 private:
-    std::string name_group;
+ std::string name_group;
  int number_of_students;
  std::vector<Tstudent*> list;
 public:
+    std::string set_name_group();
     Tgroup_of_students();
     ~Tgroup_of_students();
     void add_new_student();
+    void operator>>(Tgroup_of_students gr_a);
 };
 #endif
