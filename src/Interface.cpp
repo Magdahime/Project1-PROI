@@ -38,7 +38,7 @@ while(true){
             break;
         }
         case(7):{
-            EXIT_SUCCESS;
+            exit(1);
         }
         default:{
             std::cout<<"I'm sorry you cannot choose option "<<ans<<std::endl;
@@ -50,12 +50,14 @@ while(true){
 std::string get_line(int maxline)
 {
     char buff[maxline];
-    int i =0;
-while(getchar()!='\n'&& i<maxline){
-   buff[i]=getchar();
-   i++;
-}
-clean();
+    for(int i=0;i<maxline;i++){
+        char c = getchar();
+        if(c=='\n' || c==EOF){
+            break;
+        }else{
+            buff[i]=c;
+        }
+    }
 return(buff);
     }
 void clean()
@@ -65,4 +67,10 @@ void clean()
         {
                 c = getchar();
         } while(c!= '\n' && c!= EOF);
+}
+bool get_ans()
+{
+  char c = getchar();
+clean(); 
+return (c=='Y'||c=='y') ? true:false;
 }

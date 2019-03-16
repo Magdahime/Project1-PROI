@@ -8,4 +8,5 @@ void clean();
 void operator+(Tgroup_of_students gr_a, Tgroup_of_students gr_b);
 void operator*(Tgroup_of_students gr_a, Tgroup_of_students gr_b);
 void interface();
+bool get_ans();
 #endif

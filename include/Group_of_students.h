@@ -12,6 +12,6 @@ public:
     Tgroup_of_students();
     ~Tgroup_of_students();
     void add_new_student();
-    void operator>>(Tgroup_of_students gr_a);
+    std::ostream& operator<<(std::ostream& st);
 };
 #endif
