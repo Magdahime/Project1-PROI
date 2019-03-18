@@ -12,10 +12,15 @@ std::string Tgroup_of_students::set_name_group(void)
      std::cout<<"How would you like to name it?"<<std::endl;
      char name[MAX_LINE];
      std::cin.getline(name, MAX_LINE);
-     std::cout<<name<<std::endl;
      return(name);
 }
 Tgroup_of_students::~Tgroup_of_students()
 {
     std::cout<<"You successfully removed "<<name_group<<std::endl;
     }
+void Tgroup_of_students::add_new_student()
+{
+    Tstudent* new_student= new Tstudent;
+    list.push_back(*new_student);
+    number_of_students++;
+}

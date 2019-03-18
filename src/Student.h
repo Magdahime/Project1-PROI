@@ -1,8 +1,10 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 #include "Main.h"
-class Tstudent{
+#include "Group_of_students.h"
+class Tstudent {
     friend     std::ostream& operator<<(std::ostream& st, Tstudent student);
+    friend bool compare_index (const Tstudent stud_a,const Tstudent stud_b);
 private:
     std::string name;
     std::string surname;
