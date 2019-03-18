@@ -3,14 +3,21 @@
 #include "Student.h"
 #include "Functions.h"
 void test1(void);
+void test2(void);
 int main(void){
     test1();
+    test2();
     return 0;
 }
 void test1()
 {
-    std::cout<<"Start test"<<std::endl;
+    std::cout<<"Start test1: Creating groups"<<std::endl;
 Tgroup_of_students group_A;
-group_A<<std::cout;
+std::cout<<group_A;
     std::cout<<"End of the test"<<std::endl;
+}
+void test2(){
+    std::cout<<"Start test2: Creating students"<<std::endl;
+    Tstudent student_a;
+std::cout<<student_a;
 }

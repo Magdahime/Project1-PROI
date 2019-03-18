@@ -3,6 +3,7 @@
 #include "Main.h"
 #include "Student.h"
 class Tgroup_of_students{
+    friend std::ostream& operator<<(std::ostream& st,Tgroup_of_students group);
 private:
  std::string name_group;
  int number_of_students=0;
@@ -12,6 +13,5 @@ public:
     Tgroup_of_students();
     ~Tgroup_of_students();
     void add_new_student();
-    std::ostream& operator<<(std::ostream& st);
 };
 #endif

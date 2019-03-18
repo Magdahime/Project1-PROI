@@ -47,30 +47,3 @@ while(true){
     }
 }
 }
-std::string get_line(int maxline)
-{
-    char buff[maxline];
-    for(int i=0;i<maxline;i++){
-        char c = getchar();
-        if(c=='\n' || c==EOF){
-            break;
-        }else{
-            buff[i]=c;
-        }
-    }
-return(buff);
-    }
-void clean()
-{
-        char c;
-        do
-        {
-                c = getchar();
-        } while(c!= '\n' && c!= EOF);
-}
-bool get_ans()
-{
-  char c = getchar();
-clean(); 
-return (c=='Y'||c=='y') ? true:false;
-}
