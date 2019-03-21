@@ -8,6 +8,7 @@ std::ostream& operator<<(std::ostream& st, Tstudent student);
 void show_me_groups(std::vector <Tgroup_of_students> list, int number_of_groups);
 int group_choosing(std::vector< Tgroup_of_students > groups, int number_of_groups);
 void interface();
+void clean(void);
 void clrscrs(void);
 bool get_ans();
 bool is_it_int(char* tab, int size);

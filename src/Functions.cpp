@@ -1,16 +1,13 @@
 #include "Main.h"
 bool is_it_int(char* tab,int size){
-    if((int)strlen(tab)<size){
+    if((int)strlen(tab)<size-1){
         std::cout<<"Error, too short."<<std::endl;
         return false;
-    }
-    if((int)strlen(tab)>size){
-        std::cout<<"Error, too long."<<std::endl;
-        return false;
-    }
-           for(int i=0; i<size; i++){
+    }else if((int)strlen(tab)==size-1){
+                 for(int i=0; i<size-1; i++){
         if(!isdigit(tab[i]))
-            return false;
+            return false;  
+    }
     } 
     return true;
 }
@@ -60,6 +57,14 @@ int compare_index(Tstudent stud1, Tstudent stud2)
 
 void clrscrs(void){
         system("@cls||clear");
+}
+void clean(void)
+{
+        char c;
+        do
+        {
+                c = getchar();
+        } while(c!= '\n' && c!= EOF);
 }
 void show_me_groups(std::vector<Tgroup_of_students> list, int number_of_groups)
 {

@@ -39,8 +39,8 @@ char* Tstudent::get_index()
     std::cout<<"Enter index of the new student:"<<std::endl;
 static char index_buf[INDEX_MAX];
     do{
-        std::cout<<"Please, enter "<<INDEX_MAX<<" digits."<<std::endl;
-        std::cin.getline(index_buf,INDEX_MAX+1);
+        std::cout<<"Please, enter "<<INDEX_MAX-1<<" digits."<<std::endl;
+        std::cin.getline(index_buf,INDEX_MAX);
         std::cin.get();
     }while(!is_it_int(index_buf,INDEX_MAX));
     return(index_buf);
