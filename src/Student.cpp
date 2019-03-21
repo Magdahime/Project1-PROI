@@ -8,6 +8,13 @@ Tstudent::Tstudent()
     name = get_name();
     index = get_index();
 }
+Tstudent::Tstudent(std::string name_1 , std::string surname_1, char * index_1)
+{
+    name =name_1;
+    surname=surname_1;
+    index=index_1;
+}
+
 Tstudent::~Tstudent()
 {
     std::cout<<"You successfully removed student "<<name<<" "<<surname<<" from data base"<<std::endl;
@@ -34,6 +41,7 @@ static char index_buf[INDEX_MAX];
     do{
         std::cout<<"Please, enter "<<INDEX_MAX<<" digits."<<std::endl;
         std::cin.getline(index_buf,INDEX_MAX+1);
-    }while(0);
+        std::cin.get();
+    }while(!is_it_int(index_buf,INDEX_MAX));
     return(index_buf);
 }

@@ -1,13 +1,17 @@
 #include "Main.h"
-#include "Functions.h"
-#include "Group_of_students.h"
-#include "Student.h"
-#include <cstring>
 bool is_it_int(char* tab,int size){
-    for(int i=0; i<size; i++){
+    if((int)strlen(tab)<size){
+        std::cout<<"Error, too short."<<std::endl;
+        return false;
+    }
+    if((int)strlen(tab)>size){
+        std::cout<<"Error, too long."<<std::endl;
+        return false;
+    }
+           for(int i=0; i<size; i++){
         if(!isdigit(tab[i]))
             return false;
-    }
+    } 
     return true;
 }
 bool get_ans()
@@ -39,22 +43,37 @@ std::ostream& operator<<(std::ostream& st, Tstudent student){
     st<<student.surname<<" "<<student.name<<" "<<student.index<<std::endl;
     return st;
 }
-Tgroup_of_students* operator*(const Tgroup_of_students gr_a, const Tgroup_of_students gr_b)
+int compare_index(char* index1, char* index2)
 {
-    static Tgroup_of_students gr_c; 
-   for(int i=0;i<gr_a.number_of_students;i++){
-       for(int j=0; j<gr_b.number_of_students;j++){
-           if(compare_index(gr_a.list[i],gr_b.list[j]))
-               gr_c.list.push_back(gr_a.list[i]);
-    }
+    if(strcmp(index1,index2)>0)
+        return 1;
+    if(strcmp(index1,index2)<0)
+        return -1;
+    return 0;
 }
-return &gr_c;
-}
-bool compare_index(const Tstudent stud_a, const Tstudent stud_b)
+int compare_index(Tstudent stud1, Tstudent stud2)
 {
-if(!strcmp(stud_a.index,stud_b.index)){
-    return(true);
-}
-return(false);
+    char* index1 =stud1.index;
+    char* index2 = stud2.index;
+    return compare_index(index1,index2);
 }
 
+void clrscrs(void){
+        system("@cls||clear");
+}
+void show_me_groups(std::vector<Tgroup_of_students> list, int number_of_groups)
+{
+    for(int i=0;i<number_of_groups;i++){
+        std::cout<<" ["<<i+1<<"] "<<list[i].name_group<<std::endl;
+    }
+}
+int group_choosing(std::vector<Tgroup_of_students> groups, int number_of_groups)
+{
+    show_me_groups(groups,number_of_groups);
+    int ans=0;
+    while (ans>number_of_groups){
+        std::cout<<"Choose one group:"<<std::endl;
+        std::cin>>ans; 
+                }
+    return ans;
+}
