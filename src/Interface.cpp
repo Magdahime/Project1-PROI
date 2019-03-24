@@ -7,6 +7,7 @@ void interface(){
 while(true){
     std::cout.width(MAX_LINE);
     std::cout<<frame<<std::endl;
+    std::cout<<"ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL"<<std::endl;
     std::cout<<"What would you like to do today?"<<std::endl;
     std::cout<<"[1] Add student to the group"<<std::endl;
     std::cout<<"[2] Add a new group"<<std::endl;
@@ -19,7 +20,9 @@ while(true){
     std::cout<<"Your answer?"<<std::endl;
     std::cout<<"______";
     int ans;
-    (std::cin>>ans).get();
+    std::cin>>ans;
+        std::cin.clear();
+        std::cin.ignore(TRASH_MAX,'\n');
     switch(ans){
         case(1):{
             clrscrs();
@@ -29,7 +32,7 @@ while(true){
                 groups.push_back(group1);
                 number_of_groups++;
                 Tstudent stud_a;
-                group1.add_new_student(stud_a);
+                groups[0].add_new_student(stud_a);
             }else{
                 int ans =group_choosing(groups,number_of_groups);
                 Tstudent stud_a;
@@ -77,7 +80,9 @@ while(true){
             if(number_of_groups==0){
                 std::cout<<"Error, there is no groups to show."<<std::endl;
             }else
-            show_me_groups(groups,number_of_groups);
+            for(int i=0; i<number_of_groups;i++){
+                 std::cout<<" ["<<i+1<<"] "<<groups[i]<<std::endl;
+            }
             break;
         }
         case(6):{
@@ -85,8 +90,8 @@ while(true){
             if(number_of_groups==0){
                 std::cout<<"Error, you did not add any group."<<std::endl;
             }else {
-                      int ans =group_choosing(groups,number_of_groups);
-            std::vector<char*> index = groups[ans].indexes();
+            int ans =group_choosing(groups,number_of_groups);
+            std::vector<std::string> index = groups[ans].indexes();
             std::cout<<"Biggest index: "<<index[0]<<std::endl;
             std::cout<<"Smallest index: "<<index[1]<<std::endl;      
             }

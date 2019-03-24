@@ -1,12 +1,13 @@
 #include "Main.h"
 Tgroup_of_students::Tgroup_of_students()
 {
+    std::cout<<"This is creator of the group "<<std::endl;
     std::cout<<"You are adding a new group."<<std::endl;
     name_group=set_name_group();
 }
 Tgroup_of_students::Tgroup_of_students(std::string name, int number, std::vector<Tstudent> new_list)
 {
-
+    std::cout<<"This is creator of "<<name<<" group"<<std::endl;
     name_group=name;
     number_of_students=number;
     list=new_list;
@@ -21,8 +22,9 @@ std::string Tgroup_of_students::set_name_group(void)
 }
 Tgroup_of_students::~Tgroup_of_students()
 {
-    std::cout<<"You successfully removed "<<name_group<<std::endl;
+    std::cout<<"This is destructor of "<<name_group<<std::endl;
     }
+    
 void Tgroup_of_students::add_new_student(Tstudent student_a)
 {
     if(check_f_double(student_a)){
@@ -34,7 +36,7 @@ void Tgroup_of_students::add_new_student(Tstudent student_a)
 }
 bool Tgroup_of_students::check_f_double(Tstudent student_a)
 {
-    for(int i=0;i < number_of_students;i++){
+    for(int i=0;i <number_of_students;i++){
         if(!compare_index(student_a,list[i])){
             return true;
         }
@@ -117,20 +119,20 @@ Tgroup_of_students Tgroup_of_students::operator*=(Tgroup_of_students gr_a)
 }
 
 
-std::vector<char *> Tgroup_of_students::indexes()
+std::vector<std::string> Tgroup_of_students::indexes()
 { 
-    std::vector <char*> index;
+    std::vector <std::string> index;
     if(number_of_students==0){
         std::cout<<"There is no student in this group!"<<std::endl;
         std::cout<<"Hint: Add a new student before this operation."<<std::endl;
-        char *biggest =(char*)"Error";
-        char* smallest=(char*)"Error";
+        std::string biggest =(char*)"Error";
+        std::string smallest=(char*)"Error";
         index.push_back(biggest);
         index.push_back(smallest); 
         return(index);
     }else{
-    char* biggest=list[0].index;
-    char* smallest=list[0].index;
+    std::string biggest=list[0].index;
+    std::string smallest=list[0].index;
     for(int  i=0; i<number_of_students;i++)
     {
         if(compare_index(smallest,list[i].index)>1){

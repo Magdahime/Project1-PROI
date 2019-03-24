@@ -40,18 +40,18 @@ std::ostream& operator<<(std::ostream& st, Tstudent student){
     st<<student.surname<<" "<<student.name<<" "<<student.index<<std::endl;
     return st;
 }
-int compare_index(char* index1, char* index2)
+int compare_index(std::string index1,std::string index2)
 {
-    if(strcmp(index1,index2)>0)
+    if(index1>index2)
         return 1;
-    if(strcmp(index1,index2)<0)
+   else if(index1<index2)
         return -1;
     return 0;
 }
 int compare_index(Tstudent stud1, Tstudent stud2)
 {
-    char* index1 =stud1.index;
-    char* index2 = stud2.index;
+    std::string index1 =stud1.index;
+    std::string index2 = stud2.index;
     return compare_index(index1,index2);
 }
 
@@ -69,16 +69,16 @@ void clean(void)
 void show_me_groups(std::vector<Tgroup_of_students> list, int number_of_groups)
 {
     for(int i=0;i<number_of_groups;i++){
-        std::cout<<" ["<<i+1<<"] "<<list[i].name_group<<std::endl;
-    }
+        std::cout<<" ["<<i+1<<"] "<<list[i].name_group<<" "<<list[i].number_of_students<<std::endl;      
+        }
 }
 int group_choosing(std::vector<Tgroup_of_students> groups, int number_of_groups)
 {
     show_me_groups(groups,number_of_groups);
     int ans=0;
-    while (ans>number_of_groups){
+    do{
         std::cout<<"Choose one group:"<<std::endl;
-        std::cin>>ans; 
-                }
-    return ans;
+        (std::cin>>ans).get(); 
+        }while(ans > number_of_groups);
+    return ans-1;
 }

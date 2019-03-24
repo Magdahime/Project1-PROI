@@ -14,7 +14,7 @@ public:
     Tgroup_of_students();
     Tgroup_of_students(std::string name, int number, std::vector<Tstudent> new_list);
     ~Tgroup_of_students();
-    std::vector<char*> indexes();
+    std::vector<std::string> indexes();
     void add_new_student(Tstudent student_a);
     Tgroup_of_students operator+(Tgroup_of_students gr_a);
     Tgroup_of_students operator*(Tgroup_of_students gr_a);
