@@ -1,5 +1,4 @@
-#include "Main.h"
-#include "Functions.h"
+#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
 void interface(){
     std::vector<Tgroup_of_students> groups;
     int number_of_groups=0;

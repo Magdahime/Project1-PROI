@@ -1,6 +1,4 @@
-#include "Main.h"
-#include "Student.h"
-#include "Functions.h"
+#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
 Tstudent::Tstudent()
 {
     std::cout<<"This is creator of the student "<<std::endl;

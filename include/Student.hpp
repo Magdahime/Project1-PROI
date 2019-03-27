@@ -1,7 +1,6 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-#include "Main.h"
-#include "Group_of_students.h"
+#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
 class Tstudent {
     friend     std::ostream& operator<<(std::ostream& st, Tstudent student);
     friend     Tgroup_of_students Tgroup_of_students::operator+(Tgroup_of_students gr_a);

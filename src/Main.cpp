@@ -1,7 +1,4 @@
-#include "Main.h"
-#include "Group_of_students.h"
-#include "Student.h"
-#include "Functions.h"
+#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
 void test1(void);
 void test2(void);
 void test3(void);
