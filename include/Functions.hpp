@@ -1,6 +1,6 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
+#include "Main.hpp"
 int compare_index(std::string index1, std::string index2);
 int compare_index(Tstudent stud1, Tstudent stud2);
 std::ostream& operator<<(std::ostream& st,Tgroup_of_students group);

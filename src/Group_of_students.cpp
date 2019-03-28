@@ -1,4 +1,4 @@
-#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
+#include "Main.hpp"
 Tgroup_of_students::Tgroup_of_students()
 {
     std::cout<<"This is creator of the group "<<std::endl;

@@ -1,4 +1,4 @@
-#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
+#include "Main.hpp"
 void test1(void);
 void test2(void);
 void test3(void);

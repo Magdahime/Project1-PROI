@@ -1,6 +1,6 @@
 #ifndef GROUP_OF_S_H
 #define GROUP_OF_S_H
-#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
+#include "Main.hpp"
 class Tstudent;
 class Tgroup_of_students{
     friend std::ostream& operator<<(std::ostream& st,Tgroup_of_students group);

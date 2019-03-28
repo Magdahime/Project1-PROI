@@ -1,4 +1,4 @@
-#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
+#include "Main.hpp"
 bool is_it_int(char* tab,int size){
     if((int)strlen(tab)<size-1){
         std::cout<<"Error, too short."<<std::endl;

@@ -1,4 +1,4 @@
-#include "/home/magdalena/Dokumenty/PW_projects/PROGRAMOWANIE_C++/Lab1/include/Main.hpp"
+#include "Main.hpp"
 Tstudent::Tstudent()
 {
     std::cout<<"This is creator of the student "<<std::endl;
